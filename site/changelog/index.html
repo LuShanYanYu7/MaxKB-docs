@@ -1,0 +1,3478 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="MG 是一款基于大语言模型和 RAG 的智能知识库问答系统">
+      
+      
+        <meta name="author" content="MG 开源项目组">
+      
+      
+        <link rel="canonical" href="https://maxkb.cn/changelog/">
+      
+      
+      
+      
+      <link rel="icon" href="../docs/img/mg_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Changelog - MG 文档</title>
+      
+    
+    
+    <link rel="stylesheet" href="../css/lightgallery.min.css">
+    <link href="../css/f2c-header.css" rel="stylesheet" type="text/css" />
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+
+
+    
+    
+      
+    
+    <script src="../js/lightgallery.min.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/mega.js"></script>
+    <!-- <script async defer src="https://maxkb.fit2cloud.com/api/application/embed?protocol=https&host=maxkb.fit2cloud.com&token=05b106be72d62386"></script> -->
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-NG51348CBW"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-NG51348CBW",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-NG51348CBW",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
+            <div class="md-banner__inner md-grid md-typeset">
+              
+  You're not viewing the latest version.
+  <a href="../..">
+    <strong>Click here to go to latest.</strong>
+  </a>
+
+            </div>
+            <script>var el=document.querySelector("[data-md-component=outdated]"),base=new URL(".."),outdated=__md_get("__outdated",sessionStorage,base);!0===outdated&&el&&(el.hidden=!1)</script>
+          </aside>
+        
+      </div>
+    
+    
+<header id="topnav" class="defaultscroll sticky">
+    <svg class="hidden-print" aria-hidden="true" style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="mega-nav-icon-angle" viewBox="0 0 13 7">
+                <polygon points="6.5,6.5 0.7,1.6 1.3,0.8 6.5,5.2 11.7,0.8 12.3,1.6 "></polygon>
+            </symbol>
+            <symbol id="mega-nav-icon-close" viewBox="0 0 13 15">
+                <path vector-effect="non-scaling-stroke" d="M1.1 14L11.9 1M11.9 14L1.1 1"></path>
+            </symbol>
+        </defs>
+    </svg>
+    <div class="hidden-print mega-nav-sandbox">
+        <div class="mega-nav-banner">
+            <div class="container">
+                <div class="mega-nav-banner-item">
+                    <a class="mega-nav-banner-logo" href="https://matrixorigin.cn/"><img
+                            src="../docs/img/mg_logo.svg" alt="MatrixOrigin Logo" /></a>
+                </div>
+                <div class="mega-nav-banner-item">
+                    <p class="mega-nav-tagline">
+                        <span class="visible-xs text-muted"><a href="https://matrixorigin.cn/" target="_blank">了解矩阵起源旗下开源产品</a></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="MG 文档" class="md-header__button md-logo" aria-label="MG 文档" data-md-component="logo">
+      
+  <img src="../img/logo-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MG 文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/matrixorigin" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Matrix Origin
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MG 文档" class="md-nav__button md-logo" aria-label="MG 文档" data-md-component="logo">
+      
+  <img src="../img/logo-white.png" alt="logo">
+
+    </a>
+    MG 文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/matrixorigin" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Matrix Origin
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    产品介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system_arch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    系统架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    安装部署
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            安装部署
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/offline_installtion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    离线安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/online_installtion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    在线安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/1panel_installtion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1Panel 安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/aliyun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    阿里云安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/tencent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    腾讯云安装
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/cli/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    命令行工具
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    快速入门
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    功能手册
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            功能手册
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    知识库
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            知识库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/dataset/dataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    知识库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/dataset/doclist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/dataset/problem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    问题
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/dataset/hit-testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    命中测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/fx/fx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数库
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    应用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_1" id="__nav_5_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    应用创建
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            应用创建
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/app/simple_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    简单配置应用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/app/workflow_app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    高级编排应用
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/app/serialization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    导出与导入
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/app/app-view/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    应用概览
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/app/hit-testing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    命中测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/app/log/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对话日志
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    模型管理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            模型管理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/model_%20summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模型概况
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_2" id="__nav_5_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    模型对接
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            模型对接
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/bailian_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接阿里云百炼
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/anthropic_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接Anthropic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/amazon_bedrock_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接Amazon Bedrock
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/azure_openai_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接Azure OpenAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/deepseek_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接DeepSeek
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/gemini_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接Gemini
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/kimi_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接Kimi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/openai_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接OpenAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/tongyi_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接通义千问
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/siliconflow_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接SILICONFLOW
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/tencentcloud_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接腾讯知识引擎原子能力
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/hunyuan_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接腾讯混元
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/doubao_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接火山引擎
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/qianfan_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接百度千帆
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/spark_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接讯飞星火大模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/zhipu_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接智谱AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/local_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接本地大模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/ollama_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接Ollama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/vllm_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接vLLM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/X-Infer_model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    对接Xorbits Inference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/model/model_param/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模型参数配置
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/team/team/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    团队管理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    X-Pack功能
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            X-Pack功能
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/X-Pack/user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    用户管理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/X-Pack/login_auth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    登录认证
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/X-Pack/app_integrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    应用接入
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/X-Pack/app_logo_settting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    应用显示
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/X-Pack/app_auth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    身份验证
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/X-Pack/system_API/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    系统API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_manual/X-Pack/theme_settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    系统外观
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    开发文档
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            开发文档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev_manual/dev_environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    开发环境搭建
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev_manual/APIKey_chat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通过API KEY进行对话
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    常见问题
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            常见问题
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/Offline_install_OllamaModel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ollama离线部署LLM模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/GPU_runOllama/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ollama使用GPU运行LLM模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/maxkb_In_halo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    将MG小助手集成到Halo中
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/MaxKB%20VS.Dify/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MG和Dify有什么区别
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    联系我们
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 版本说明
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 更新内容
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 更新内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v1102" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.10.2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v1101" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.10.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v1100" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.10.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v191" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.9.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v190" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.9.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v181" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.8.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v180" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.8.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v172" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.7.2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v171" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.7.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v170" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.7.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v161" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.6.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v160" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.6.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v151" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.5.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v150" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.5.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v141" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.4.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v140" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.4.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v131" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.3.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v130" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.3.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v121" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.2.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v120" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.2.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v113" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.1.3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v112" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.1.2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v111" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.1.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v110" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.1.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v104" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.0.4
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v103" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.0.3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v102" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.0.2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v101" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.0.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v100" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.0.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v091" class="md-nav__link">
+    <span class="md-ellipsis">
+      v0.9.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v090" class="md-nav__link">
+    <span class="md-ellipsis">
+      v0.9.0
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Changelog</h1>
+
+<h2 id="1">1 版本说明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p><strong>版本号说明：</strong> 像其它优秀开源项目一样，MaxKB 将保持每月发布一个新的功能版本，功能版本中如遇较为紧急或严重的 Bug，将及时推出 Bug 修复的小版本。         <br />
+<strong>MaxKB 版本号命名规则为：</strong> v 大版本.功能版本. Bug 修复版本，示例如下：</p>
+<ul>
+<li>v1.0.1 是 v1.0.0 之后的 Bug 修复版本</li>
+<li>v1.1.0 是 v1.0.0 之后的功能版本</li>
+</ul>
+</div>
+<h2 id="2">2 更新内容<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="v1102">v1.10.2<a class="headerlink" href="#v1102" title="Permanent link">&para;</a></h3>
+<p>2025 年 3 月 6 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>应用：应用接入新增支持对接Slack。（X-Pack）</li>
+<li>应用：新增变量赋值节点。</li>
+<li>函数库：支持导入/导出函数。</li>
+<li>模型设置：新增支持Ollama供应商的重排模型。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>应用：开启思考过程后，优化在企业微信、飞书、钉钉、公众号中的回复过程。（X-Pack）</li>
+<li>应用：企业微信对话时支持上传图片。（X-Pack）</li>
+<li>应用：登录认证的OIDC设置支持配置scope参数。（X-Pack）</li>
+<li>应用：支持创建空白应用。</li>
+<li>应用：用户输入的参数新增支持密码框和开关组件。</li>
+<li>应用：用户输入支持自定义标题。</li>
+<li>应用：表单收集节点的参数新增支持密码框组件。</li>
+<li>应用：上传音频文件类型新增m4a格式。</li>
+<li>应用：通过调用应用API Key的方式进行对话时，支持上传文件参数。</li>
+<li>应用：通过调用应用API Key的方式进行对话时，支持输出思考过程参数。</li>
+<li>应用：基础信息节点中的用户输入表格中的参数，支持拖拽式调整顺序。</li>
+<li>应用：判断器中的条件值支持变量解析。</li>
+<li>应用：在多路召回节点的“执行详情”对话框中，优化分段显示内容（包含分段标题、文档和知识库）。</li>
+<li>应用：当用户退出工作流编辑时提示用户保存数据。</li>
+<li>应用：关联知识库引用分段数的最大值调整为10000。</li>
+<li>应用：高级编排中修改节点名称的操作修改为“…”→“重命名”。</li>
+<li>应用：单一图片生成节点生成多张图片时横向排列图片。</li>
+<li>问答页面：优化问答页面布局为左右布局，左侧显示AI回答，右侧显示用户问题。</li>
+<li>问答页面：优化用户打开问答页面时，显示历史对话记录。</li>
+<li>问答页面：优化语音播放时仅播放最后一个内容。</li>
+<li>问答页面：支持修改会话标题。</li>
+<li>知识库：支持执行生成问题失败的分段继续生成问题。</li>
+<li>知识库：支持为文档列表排序。</li>
+<li>知识库：支持在生成问题中使用{title}变量获取分段标题。</li>
+<li>函数库：查询函数时忽略大小写。</li>
+<li>模型设置：查询模型时忽略大小写。</li>
+<li>团队成员：查询成员时忽略大小写。</li>
+<li>系统：优化第一次登录时耗时较长的问题。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>应用：修复AI回复内容中的图片无法放大的问题。</li>
+<li>应用：修复高级编排中的提示词窗口放大后编辑内容，按ESC键关闭窗口后不保存提示词的问题。</li>
+<li>应用：修复使用vLLM供应商大语言模型进行对话时，部分情况下回答无法结束的问题。</li>
+<li>应用：修复使用Kimi供应商的大语言模型进行对话时，Tokens计算不准确的问题。</li>
+<li>应用：修复图片生成节点切换模型后参数设置未更新的问题。</li>
+<li>应用：修复当Excel表格中含有合并单元格的数据时，读取时会缺少数据的问题。</li>
+<li>应用：修复OpenAI调用格式没有思考过程参数的问题。</li>
+<li>应用：修复应用子节点中若有非必填参数，在父级应用中若未设置该参数，对话时会报错的问题。</li>
+<li>应用：修复Ollama供应商的大语言模型使用num_ctx参数时，进行对话会报错的问题。</li>
+<li>问答页面：修复在历史对话记录中，无法使用浏览器进行语音播放的问题。</li>
+<li>问答页面：修复新建对话后第一次提问时，刷新页面会删除当前对话的问题。</li>
+<li>问答页面：修复问题框中无法在内容中间插入换行的问题。</li>
+<li>问答页面：修复显示设置中关闭历史记录后，问答页面的新建对话不显示的问题。（X-Pack）</li>
+<li>问答页面：修复部分情况下会在文档的URL地址后面自动加上“/”，导致无法访问的问题。</li>
+<li>函数库：修复函数返回值为0时，调试时的输出结果显示错误的问题。</li>
+<li>模型设置：修复添加阿里云百炼的大语言模型时，如果是全模态模型提交会报错的问题。</li>
+<li>模型设置：修复 Azure OpenAI 供应商添加DeepSeek-R1 模型报错的问题。</li>
+<li>系统设置：修复Swagger文档中接口参数显示不全的问题。（X-Pack）</li>
+<li>系统设置：修复外观设置中设置网站名称后问答页面不显示应用名称的问题。（X-Pack）</li>
+<li>系统设置：修复登录页面加载时，默认Logo会闪现的问题。（X-Pack）</li>
+</ul>
+</div>
+<h3 id="v1101">v1.10.1<a class="headerlink" href="#v1101" title="Permanent link">&para;</a></h3>
+<p>2025 年 2 月 13 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>模型设置：新增腾讯云知识引擎原子能力供应商的大语言模型。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>应用：优化高级编排应用中当节点数过多时，打开工作流编排页面较慢的问题。</li>
+<li>应用：优化发送给AI模型的历史聊天记录中过滤掉表单数据，避免影响AI回答。</li>
+<li>应用：优化输出思考设置的描述。</li>
+<li>应用：优化高级编排应用中，调试预览的对话窗口只有点击“关闭”按钮时才会被关闭。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>知识库：修复上传文件时设置标题为关联问题时，实际未关联成功的问题。</li>
+<li>知识库：修复上传的文件夹中包含子文件夹时，上传报错的问题。</li>
+<li>知识库：修复上传的文件夹中包含隐藏文件时，上传报错的问题。</li>
+<li>应用：修复执行详情中文档内容提取节点显示错误文案的问题。</li>
+<li>应用：修复上传的Excel文档有空白sheet时，导致文档内容提取节点报错的问题。</li>
+<li>应用：修复偶发性回复"抱歉，没有查找到相关内容，请重新描述您的问题或提供更多信息。"的问题。</li>
+<li>应用：应用达到提问次数上限后，英文的提示信息不正确。</li>
+<li>应用：修复导出的对话日志文件中列名显示不准确的问题。</li>
+<li>应用：修复显示设置中点击“恢复默认”后，不能设置主题色和头部字体颜色的问题。（X-Pack）</li>
+<li>应用：修复显示设置中点击“恢复默认”后，语言会显示null或undefined的问题。（X-Pack）</li>
+<li>系统设置：修复非组织下钉钉用户也能扫码登成功的问题。（X-Pack）</li>
+<li>系统设置：修复钉钉用户扫码登录后，用户邮箱信息获取不全的问题。（X-Pack）</li>
+<li>系统设置：修复平台设置预览中不应该有语言设置操作的问题。（X-Pack）</li>
+</ul>
+</div>
+<h3 id="v1100">v1.10.0<a class="headerlink" href="#v1100" title="Permanent link">&para;</a></h3>
+<p>2025 年 2 月 10 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>应用：针对DeepSeek R1深度思考功能的发布，MaxKB对应新增“输出思考”配置功能。</li>
+<li>应用：鉴于不同供应商所提供的思考过程标识存在差异，MaxKB支持用户依据所选用的具体模型，自定义思考过程的标签。</li>
+<li>应用：支持语音输入自动发送。</li>
+<li>应用：支持语音自动播放。</li>
+<li>应用：显示设置中新增问答页面的语言设置。</li>
+<li>模型设置：支持SILICONFLOW供应商的大语言模型、向量模型、重排模型、语音识别和图片生成模型。</li>
+<li>模型设置：支持Anthropic供应商的大语言模型和视觉模型。</li>
+<li>模型设置：支持vLLM供应商的向量模型和图片理解模型。</li>
+<li>模型设置：支持豆包供应商的向量模型。</li>
+<li>系统管理：支持系统语言切换，首批支持简体中文、繁体中文和英文三种语言。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>应用：优化用户提问时上传文件的样式显示问题。</li>
+<li>应用：针对AI回复内容可以右键引用或复制。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>知识库：修复上传离线文件时，文件名超过128个字符报错的问题。</li>
+<li>应用：修复在企业微信中提问回复内容不全的问题。（X-Pack）</li>
+<li>应用：修复开场白超过4096个字符报错的问题。</li>
+<li>应用：修复问答页面新建对话后，上传文档无法读取文档内容的问题。</li>
+<li>应用：修复添加的应用子节点中的参数未实时更新的问题。</li>
+</ul>
+</div>
+<h3 id="v191">v1.9.1<a class="headerlink" href="#v191" title="Permanent link">&para;</a></h3>
+<p>2025 年 1 月 9 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>知识库：文档向量化时支持仅向量化非成功的分段。</li>
+<li>应用：通过第三方应用进行对话的日志，优化为按天记录每个用户的对话日志。(X-Pack)</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>应用：修复进行语音输入时，提示中图片加载失败的问题。</li>
+<li>应用：修复嵌入应用节点，设置变量参数后，保存不生效的问题。</li>
+<li>应用：修复部分网络环境下使用图片理解模型对话结束后，提示Connection aborted的问题。</li>
+<li>应用：修复判断器节点的执行条件设置为any时不生效的问题。</li>
+<li>应用：修复添加图片理解和图片生成模型时，不能自定义输入基础模型的问题。</li>
+<li>应用：修复部分情况下在执行详情中会遗漏执行节点的问题。</li>
+</ul>
+</div>
+<h3 id="v190">v1.9.0<a class="headerlink" href="#v190" title="Permanent link">&para;</a></h3>
+<p>2025 年 1 月 2 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>应用：新增图片生成节点。</li>
+<li>应用：支持上传音频文件，新增语音转文本节点。</li>
+<li>应用：新增文本转语音节点。</li>
+<li>应用：支持导出和导入应用。</li>
+<li>应用：工作流节点支持设置执行条件。</li>
+<li>应用：支持接入企业微信的微信客服。（X-Pack）</li>
+<li>应用：公众号、企业微信、微信客服支持语音提问和语音回答。（X-Pack）</li>
+<li>知识库：知识库和文档支持导出Excel文件与离线图片的ZIP包。</li>
+<li>知识库：上传文档选择文本文件类型时，新增XLS、XLSX、CSV、ZIP文件格式。</li>
+<li>知识库：上传文档选择QA问答对类型时，新增ZIP文件格式。</li>
+<li>模型设置：创建模型时，支持设置模型参数。</li>
+<li>模型设置：图片理解和图片生成模型支持设置模型参数。</li>
+<li>模型设置：图片理解模型新增支持Xinference、Ollama、豆包、阿里云百炼、Azure OpenAI、Gemini供应商。</li>
+<li>模型设置：图片生成模型新增支持Xinference、OpenAI、腾讯混元、通义千问、智谱AI、豆包、阿里云百炼、Azure OpenAI供应商。</li>
+<li>模型设置：向量模型新增支持Azure OpenAI供应商。</li>
+<li>模型设置：语音识别模型新增支持Azure OpenAI供应商。</li>
+<li>模型设置：语音合成模型新增支持Azure OpenAI供应商。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>应用：基本信息节点中的“用户输入“参数，添加参数时支持设置“显示默认值”选项。</li>
+<li>应用：表单收集节点的参数支持设置“显示默认值”选项。</li>
+<li>应用：对话URL支持携带“question=问题”参数，打开对话页面时自动发送问题。</li>
+<li>应用：上传图片时自动生成“请解析图片内容”的问题。</li>
+<li>应用：优化工作流节点的执行效率。</li>
+<li>知识库：文档列表支持批量取消向量化和批量取消生成问题。</li>
+<li>模型设置：Amazon Bedrock供应商添加大语言模型时，支持ProxyURL参数。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>安全：修复函数库模块中远程命令执行的安全漏洞（CVE-2024-56137）。</li>
+<li>应用：修复浮窗对话框中不显示“新建对话”按钮的问题。</li>
+<li>应用：修复浮窗对话框右上角的icon颜色不一致的问题。</li>
+<li>应用：修复历史应用进行对话时会提示“缺少上下文类型”错误的问题。</li>
+<li>应用：修复使用低版本浏览器进行对话时报错的问题。</li>
+<li>应用：修复执行复杂工作流时，在部分情况下会漏执行节点的问题。</li>
+</ul>
+</div>
+<h3 id="v181">v1.8.1<a class="headerlink" href="#v181" title="Permanent link">&para;</a></h3>
+<p>2024 年 12 月 12 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>应用：AI对话节点的历史聊天记录可设置工作流和节点的上下文。</li>
+<li>模型管理：支持智谱AI供应商的图片理解模型。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>应用：语音播放时过滤表单数据。</li>
+<li>系统：优化部分页面的显示样式。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>应用：按名称筛选结果后，不加载数据的问题。</li>
+<li>应用：修复浮窗图标尺寸过大时会被引导图遮盖的问题。</li>
+<li>知识库：修复文档按状态筛选结果错误的问题。</li>
+<li>知识库：修复拥有查看权限的成员可以导出文档的问题。</li>
+<li>知识库：修复拥有查看权限的成员可以修改分段启用/禁用状态的问题。</li>
+<li>知识库：修复上传无目录结构的PDF文件，只能识别第一页内容的问题。</li>
+<li>系统管理：修复Swagger文档中的Web站点知识库缺少参数的问题。（X-Pack）</li>
+<li>系统管理：修复企业微信扫码登录配置错误的问题。（X-Pack）</li>
+</ul>
+</div>
+<h3 id="v180">v1.8.0<a class="headerlink" href="#v180" title="Permanent link">&para;</a></h3>
+<p>2024 年 12 月 5 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>应用：用户提问时支持上传文档和图片。</li>
+<li>应用：工作流新增文档内容提取节点。</li>
+<li>应用：工作流新增图片理解节点。</li>
+<li>应用：工作流新增表单收集节点。</li>
+<li>应用：工作流支持嵌入应用节点。</li>
+<li>应用：工作流画布支持收起或展开全部节点以及一键美化布局。</li>
+<li>应用：基础节点的用户输入参数中，支持多选框和选项卡组件。</li>
+<li>应用：开场白支持HTML渲染。</li>
+<li>应用：支持批量将对话日志添加到知识库。</li>
+<li>应用：支持按创建者显示应用。</li>
+<li>知识库：支持按创建者显示知识库。</li>
+<li>函数库：支持按创建者显示函数。</li>
+<li>模型设置：支持通义千问供应商的图片理解模型。</li>
+<li>模型设置：支持OpenAI供应商的图片理解模型。</li>
+<li>模型设置：支持腾讯混元供应商的图片理解模型。</li>
+<li>模型设置：支持阿里云百炼供应商的大语言模型。</li>
+<li>系统管理：支持OAuth2单点登录方式。（X-Pack）</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>知识库：优化文档状态，显示向量化和生成问题的进度详情。</li>
+<li>应用：基础节点的用户输入参数中，单选框组件支持标签、选项值的设置方式。</li>
+<li>应用：对话详情页面对AI回复内容进行标注时，保留上一次所选的知识库文档。</li>
+<li>应用：优化对话日志列表的显示顺序，按最近对话时间降序排序。</li>
+<li>应用：优化打开对话详情时，默认显示最新对话记录。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>知识库：修复PDF文档中若包含不能识别的特殊字符时，上传文档会报错的问题。</li>
+<li>知识库：修复部分情况下为“成功”状态的文档生成问题时，无法下发任务的问题。</li>
+<li>知识库：修复由于网站编码问题，导致web站点知识库无法获取文本内容的问题。</li>
+<li>系统管理：修复拥有知识库管理权限的成员，无法查看知识库的问题。</li>
+<li>系统管理：修复拥有应用查看权限的成员，能够修改应用接入配置的问题。（X-Pack）</li>
+</ul>
+</div>
+<h3 id="v172">v1.7.2<a class="headerlink" href="#v172" title="Permanent link">&para;</a></h3>
+<p>2024 年 11 月 15 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>应用：修复显示设置中自定义上传的用户头像、AI回复头像图片显示变形的问题。</li>
+<li>应用：修复工作流中知识库检索节点收起后，无法发布应用的问题。</li>
+<li>应用：修复AI模型的参数设置中，若删除温度或最大输出 Tokens 参数，无法发布应用的问题。</li>
+<li>应用：修复应用中关联的知识库名称过长时，偶然不显示 tooltips 的问题。</li>
+<li>应用：修复应用列表中查询结果显示不正确的问题。</li>
+</ul>
+</div>
+<h3 id="v171">v1.7.1<a class="headerlink" href="#v171" title="Permanent link">&para;</a></h3>
+<p>2024 年 11 月 8 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>应用：高级编排应用中保存节点的收起/展开状态。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>应用：修复应用接入认证过的公众号，提问时不回复的问题。</li>
+<li>应用：修复应用接入公众号配置页面的样式问题。</li>
+<li>应用：函数中设置了非必填参数，在应用中引用该函数时，若未传值执行会报错的问题。</li>
+<li>应用：修复工作流中所有节点未打开返回内容时，无法查看执行详情的问题。</li>
+<li>应用：修复直接回答分段内容显示问题。</li>
+<li>应用：修复应用发布后，提问时未使用最新发布的应用配置的问题。</li>
+<li>知识库：修复导入DOCX文档时，在部分情况下无法识别图片问题。</li>
+<li>问答页面：修复AI回答时，若返回的MarkDown表格中含有图片内容会导致显示错位的问题。</li>
+<li>系统设置：修复团队成员的权限设置中，搜索后点击“全选”，会选中全部而不是搜索后的内容。</li>
+<li>模型管理：修复添加Xinference向量模型时，提示 API 域名无效的问题。</li>
+</ul>
+</div>
+<h3 id="v170">v1.7.0<a class="headerlink" href="#v170" title="Permanent link">&para;</a></h3>
+<p>2024 年 10 月 31 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【知识库】支持知识库文档自动生成关联问题。           </li>
+<li>【应用】工作流节点支持多进多出。         </li>
+<li>【应用】支持设置语音播放的声音和语速。         </li>
+<li>【应用】支持查看和恢复历史版本。         </li>
+<li>【应用】支持设置对话日志的清除策略。         </li>
+<li>【应用】高级编排应用支持自动保存设置，默认不开启，开启后默认5分钟保存一次。         </li>
+<li>【应用】工作流编排界面在添加组件时支持按名称查询组件。         </li>
+<li>【模型设置】支持自定义大语言模型和语音合成模型的参数。         </li>
+<li>【模型设置】支持按模型类型、创建人、权限查询模型。         </li>
+<li>【模型设置】模型面板中增加创建人信息。         </li>
+<li>【模型设置】支持阿里云百炼的向量模型。         </li>
+<li>【模型设置】支持 Amazon Bedrock 的向量模型。         </li>
+<li>【模型设置】支持腾讯混元的向量模型。         </li>
+<li>【模型设置】支持讯飞星火的向量模型。         </li>
+<li>【模型设置】支持百度千帆的向量模型。         </li>
+<li>【模型设置】支持阿里云百炼的语音识别和语音合成模型。         </li>
+<li>【模型设置】支持 Xinference 的语音识别和语音合成模型。         </li>
+<li>【问答页面】支持个性化显示设置。（X-Pack）        </li>
+<li>【问答页面】支持身份验证。（X-Pack）         </li>
+<li>【系统设置】支持企业微信、钉钉、飞书扫码登录。（X-Pack）         </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【应用】基础节点的全局变量优化为用户输入和接口传参两个参数表单。         </li>
+<li>【应用】关联知识库时支持按名称查询知识库。         </li>
+<li>【应用】关联知识库的名称过长时增加悬浮显示。         </li>
+<li>【应用】知识库检索结果 和 满足直接回答的分段内容中包含分段标题。         </li>
+<li>【应用】导出高级编排应用时包含知识库检索节点的引用分段数据。         </li>
+<li>【应用】在语音输入时，控制台不再输出调试信息。         </li>
+<li>【函数库】优化函数中 Python 编辑器组件，使得编写函数体验更友好。         </li>
+<li>【团队管理】设置资源权限时增加全选按钮。         </li>
+<li>【模型设置】创建模型时，支持按模型类型筛选供应商。         </li>
+<li>【模型设置】优化供应商列表的显示顺序和分类，将供应商划分为公有模型供应商和私有模型供应商。         </li>
+<li>【系统设置】优化修改密码的逻辑，先验证两次密码是否一致，再发邮件验证码。         </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【知识库】修复导入 License 文件后，会显示一次 License 过期的提示的问题。         </li>
+<li>【知识库】修复当导出空知识库时，打开导出文件报错的问题。         </li>
+<li>【知识库】修复当知识库文档中图片不存在时，AI 回复内容显示异常的问题。         </li>
+<li>【知识库】修复在知识库上传 DOCX 文件后，部分情况下图片未正常导入的问题。         </li>
+<li>【知识库】修复在知识库上传 PDF 文件，选择高级分段时，设置分段长度不生效的问题。         </li>
+<li>【知识库】修复在知识库分段中插入 MarkDown 流程图，不显示文本内容的问题。         </li>
+<li>【应用】修复当应用使用的模型为豆包智能体模型时，接入企业微信提问不回复的问题。         </li>
+<li>【应用】修复知识来源引用分段的文件名过长时，界面显示错乱的问题。         </li>
+<li>【应用】修复在接入的公众号中提问时，若回复内容在图片后面有文本内容, 无法返回图片的问题。         </li>
+<li>【模型管理】修复添加 Xinference 模型时，如果模型名称和 ID 不一致，无法添加模型的问题。         </li>
+<li>【模型管理】修复添加 Xinference 模型时，没有传认证参数导致提示 API 域名无效的问题。         </li>
+</ul>
+</div>
+<h3 id="v161">v1.6.1<a class="headerlink" href="#v161" title="Permanent link">&para;</a></h3>
+<p>2024 年 09 月 29 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【应用】修复使用AWS模型进行对话时报错的问题。         </li>
+<li>【应用】修复升级后第一次进入高级编排应用编辑页面，显示空白的问题。         </li>
+<li>【应用】修复高级编排应用设置全局变量后，打开调试对话框，选择变量后调试对话框会被关闭的问题。          </li>
+<li>【应用】修复关联知识库中，知识库名称过长导致显示不全的问题。         </li>
+<li>【知识库】修复分段内容超过单元格最大长度时，导出报错的问题。         </li>
+</ul>
+</div>
+<h3 id="v160">v1.6.0<a class="headerlink" href="#v160" title="Permanent link">&para;</a></h3>
+<p>2024 年 09 月 27 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【应用】支持语音方式问答。         </li>
+<li>【应用】支持使用重排模型进行多路召回。         </li>
+<li>【应用】支持自定义全局变量。         </li>
+<li>【应用】支持标准 OpenAI 格式对话。         </li>
+<li>【应用】支持渲染 ECharts 图表和 HTML 页面。         </li>
+<li>【知识库】支持上传 Excel 和 CSV 表格文档。         </li>
+<li>【知识库】支持对多个文档进行批量重新向量化操作。         </li>
+<li>【知识库】支持问题批量关联分段。         </li>
+<li>【函数库】】支持自定义设置函数权限与状态。         </li>
+<li>【模型管理】】支持对接豆包、讯飞星火、OpenAI 供应商的语音识别、语音合成模型。         </li>
+<li>【模型管理】】支持对接阿里云百炼、Xinference 以及本地模型的重排模型。         </li>
+<li>【应用】支持一键接入企业微信、钉钉、飞书和微信公众号。（X-Pack）</li>
+<li>【外观设置】支持自定义主题色、项目信息等设置。（X-Pack）</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【知识库】PDF文档支持按目录章节进行分段。         </li>
+<li>【应用】AI模型的参数设置中最大输出Tokens的最大值调整为10万，由用户自行控制大小。         </li>
+<li>【应用】优化简易应用的设置，提示词分为无引用知识库提示词和引用知识库提示词。         </li>
+<li>【应用】简易应用的问题优化调整至关联知识库的参数设置中，且支持设置提示词。         </li>
+<li>【应用】简易应用的多轮对话调整为历史聊天记录，可以自定义设置历史记录数。         </li>
+<li>【应用】简易应用调试预览的应用Logo可以自定义上传应用头像。         </li>
+<li>【应用】高级编排应用的节点支持展开和收起，节省画布空间。         </li>
+<li>【应用】高级编排应用点击节点右侧“+ ”号可直接添加节点。         </li>
+<li>【应用】新增系统变量历史聊天记录和对话ID。         </li>
+<li>【应用】对话日志详情中修改标注内容时支持Markdown样式编辑。         </li>
+<li>【问答页面】优化换个答案按钮的图标。         </li>
+<li>【用户管理】优化创建用户的用户名规则。         </li>
+<li>【系统】优化弹窗只能点击“保存”或者“关闭”选项退出，避免编辑过程中误退出情况的发生。         </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【知识库】修复向MaxKB上传语雀导出的Word文档时，导入内容是空白的问题。         </li>
+<li>【知识库】修复上传空白PDF文件报错的问题。         </li>
+<li>【应用】修复开启多轮对话时，提问30秒以上不携带历史对话记录的问题。         </li>
+<li>【应用】修复AI模型的参数设置中最大输出Tokens的提示描述错误的问题。         </li>
+<li>【应用】修复通过应用的API Key进行对话时，若stream设置为false会报错的问题。         </li>
+<li>【应用】修复在AI对话节点对调用的腾讯混元模型进行角色设定时，对话报错的问题。         </li>
+<li>【团队成员】修复团队成员过多时会出现超出边界的问题。         </li>
+</ul>
+</div>
+<h3 id="v151">v1.5.1<a class="headerlink" href="#v151" title="Permanent link">&para;</a></h3>
+<p>2024 年 08 月 29 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【应用】修复在应用设置中点击发布提示温度参数未设置的问题。               </li>
+<li>【应用】修复使用本地模型进行提问时，获取tokens报错问题。         </li>
+</ul>
+</div>
+<h3 id="v150">v1.5.0<a class="headerlink" href="#v150" title="Permanent link">&para;</a></h3>
+<p>2024 年 08 月 28 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【函数库】支持函数功能。               </li>
+<li>【高级应用】工作流编排支持添加函数库中函数节点。           </li>
+<li>【应用】支持复制应用。         </li>
+<li>【应用】支持设置AI模型的temperature和max_tokens参数。           </li>
+<li>【模型管理】支持对接豆包大模型。             </li>
+<li>【模型管理】支持对接Amazon Bedrock 的大模型。               </li>
+<li>【模型管理】支持对接腾讯混元大模型。              </li>
+<li>【模型管理】支持对接 vLLM 大模型。             </li>
+<li>【模型管理】支持对接 Xinference 大模型。            </li>
+<li>【系统设置】支持 CAS 认证方式。（X-Pack）   </li>
+<li>【系统设置】支持 OIDC 认证方式。（X-Pack）   </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【知识库】优化文档向量化性能。            </li>
+<li>【知识库】优化PDF文档的智能分段效果。               </li>
+<li>【应用】优化应用名称过滤前后空格。            </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【系统】修复Django JSONField存在SQL注入漏洞（CVE-2024-42005）。             </li>
+<li>【知识库】修复文档设置直接回答时相似度写0.000，提示设置成功，实际上不生效的问题。                 </li>
+<li>【知识库】修复智能分段时，单个段落超出10w字符报错的问题。                </li>
+<li>【应用】修复对话日志导出报错的问题。             </li>
+<li>【应用】修复编排页面AI对话节点提示词无法选中的问题。             </li>
+<li>【应用】修复编排页面鼠标定位在AI对话节点的提示词中放大缩小事件冲突问题。             </li>
+<li>【模型管理】修复模型名称前后端校验不统一问题。            </li>
+<li>【模型管理】修复无法添加智谱AI模型的问题。              </li>
+<li>【外观设置】修复登录图片设置上传大尺寸图片报错的问题。（X-Pack）   </li>
+<li>【外观设置】修复自定义外观设置后，还会显示默认外观的问题。（X-Pack）   </li>
+</ul>
+</div>
+<h3 id="v141">v1.4.1<a class="headerlink" href="#v141" title="Permanent link">&para;</a></h3>
+<p>2024 年 08 月 08 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【应用】显示设置中自定义对话头像和浮窗入口图标支持GIF格式。（X-Pack）   </li>
+<li>【应用编排】指定回复和AI对话节点新增返回内容设置。         </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【应用编排】优化开场白和提示词的编辑框支持放大。              </li>
+<li>【问答页面】用户问题提问后显示换行格式。            </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【应用】修复使用讯飞星火模型，当多用户同时提问后，回答内容会错乱的问题。             </li>
+<li>【应用】修复在设置页面提问时，多轮对话设置不生效的问题。             </li>
+<li>【应用】修复当应用只有使用权限，在高级编排页面一直提示没有权限的问题。             </li>
+<li>【知识库】修复修改关联问题报错的问题。                </li>
+<li>【知识库】修复添加分段时上传超大像素图谱报错的问题。                </li>
+<li>【知识库】修复上传PDF问答后，部分内容丢失的问题。                </li>
+<li>【知识库】创建Web站点知识库，选择向量模型不生效的问题。               </li>
+<li>【知识库】修复上传QA问答对文件时，当表格中只有数字，获取数据失败的问题。               </li>
+<li>【知识库】修复文档被删除后依然执行向量化的问题。              </li>
+<li>【模型管理】修复模型名称设置超过20个字符报错的问题。            </li>
+</ul>
+</div>
+<h3 id="v140">v1.4.0<a class="headerlink" href="#v140" title="Permanent link">&para;</a></h3>
+<p>2024 年 07 月 31 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【知识库】支持创建空知识库。                </li>
+<li>【知识库】创建和设置知识库时支持选择不同的向量模型进行向量化。             </li>
+<li>【模型管理】支持添加 OpenAI 、Ollama 和本地的向量模型。               </li>
+<li>【模型管理】支持把模型权限设置为公用或私有。              </li>
+<li>【应用】高级编排的指定回复节点支持快捷问题输出：<code>&lt;quick_question&gt;快捷问题&lt;/quick_question&gt;</code>。             </li>
+<li>【应用】支持设置浮窗模式的对话框入口图标。X-Pack）   </li>
+<li>【应用】支持自定义对话框的AI回复的头像。（X-Pack）   </li>
+<li>【应用】支持设置浮窗模式的对话框是否可拖拽位置。（X-Pack）   </li>
+<li>【应用】支持设置对话框是否显示历史记录。（X-Pack）   </li>
+<li>【系统设置】支持LDAP单点登录。（X-Pack）      </li>
+<li>【系统设置】支持自定义主题外观，设置系统的网站 logo、登录 logo、主题色、登录背景图、网站名称、欢迎语等。（X-Pack）     </li>
+<li>【系统设置】开放系统 API。（X-Pack）   </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【知识库】优化文档索引流程，提高知识点召回率。            </li>
+<li>【知识库】调整分段内容最大长度为 10 万个字符。            </li>
+<li>【应用】调整关联知识库时只能选择使用相同向量模型的知识库。            </li>
+<li>【应用】显示知识来源调整至显示设置中。            </li>
+<li>【模型管理】优化模型列表样式。            </li>
+<li>【关于】优化关于页面显示信息。         </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【知识库】修复爬取Web网站文档时碰到无法访问页面时中断爬取任务的问题。            </li>
+<li>【知识库】修复分段详情中关联问题过多时滚动条显示问题。            </li>
+<li>【模型管理】修复在Ollama供应商有下载中模型时，切换到其他供应商的模型也变为下载中的问题。            </li>
+<li>【问答页面】修复回答时若内容中包含代码不展开显示的问题。           </li>
+<li>【问答页面】修复删除新建对话报错的问题。         </li>
+</ul>
+</div>
+<h3 id="v131">v1.3.1<a class="headerlink" href="#v131" title="Permanent link">&para;</a></h3>
+<p>2024 年 07 月 16 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【应用概览】打开 API 访问凭据的地址显示 404。              </li>
+<li>【应用编排】判断器中删除其中一个条件分支后，再添加条件分支，前端顺序号未更新。               </li>
+<li>【应用编排】判断器中的选择变量的滚动条不能拖动。               </li>
+<li>【应用编排】执行详情中知识库检索结果的排序不对，未按相似度降序排序。               </li>
+<li>【应用编排】指定回复的内容在任务流程中传递会返回空。                </li>
+<li>【问答页面】当应用关联的知识库中含有禁用状态的文档时，提问后点换个答案不会换一批命中分段。              </li>
+<li>【知识库】在线知识库爬取文档名超过 128 个字符报错。             </li>
+</ul>
+</div>
+<h3 id="v130">v1.3.0<a class="headerlink" href="#v130" title="Permanent link">&para;</a></h3>
+<p>2024 年 07 月 04 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【应用】支持创建简易配置和高级编排两种类型的应用，高级编排应用支持自定义工作流。                </li>
+<li>【应用】高级编排的应用AI对话节点支持角色设定。             </li>
+<li>【应用】高级编排的应用AI对话节点支持自定义设置携带的历史聊天记录数。             </li>
+<li>【应用】高级编排的应用支持获取当前时间的系统变量。             </li>
+<li>【对话日志】高级编排应用支持查看每个节点的执行详情。 </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【知识库】修复上传QA问答对时阻塞问题。               </li>
+<li>【知识库】修复高级分段开启自动清洗后会把所有的换行符去掉的问题。            </li>
+<li>【应用】修复提示词输入Json格式的内容时，提问会报错的问题。             </li>
+</ul>
+</div>
+<h3 id="v121">v1.2.1<a class="headerlink" href="#v121" title="Permanent link">&para;</a></h3>
+<p>2024 年 06 月 14 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【问答页面】历史聊天记录支持逻辑删除。 </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【问答页面】对话时文本输入框根据输入文本内容自适应高度。             </li>
+<li>【应用】最大引用字符数调整为 10 万。             </li>
+<li>【应用】对话时问题的最大字符数调整为 10 万。             </li>
+<li>【应用】知识来源引用分段为 0 时也可打开详情。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【应用】解决应用 API 文档接口调用报错的问题。             </li>
+<li>【应用】解决嵌入第三方全屏模式描述错误的问题。             </li>
+<li>【知识库】解决导入带有表格样式的 md 文件分段后表格格式丢失的问题。              </li>
+</ul>
+</div>
+<h3 id="v120">v1.2.0<a class="headerlink" href="#v120" title="Permanent link">&para;</a></h3>
+<p>2024 年 05 月 30 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【知识库】支持上传 Excel/CSV 格式的 QA 问答对，自动关联问题。               </li>
+<li>【知识库】支持上传 HTML 格式的文本文件。            </li>
+<li>【知识库】支持知识库和文档重新向量化操作。            </li>
+<li>【知识库】支持导出知识库和文档。            </li>
+<li>【问答页面】支持新建对话和查看历史对话。            </li>
+<li>【问答页面】支持导出对话记录。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【应用】显示知识来源的引用分段，支持 markdown 样式显示。              </li>
+<li>【应用】提问后模型返回异常信息时也要记录到对话日志中。             </li>
+<li>【应用】在对话日志详情中修正答案时，问题可以修改。             </li>
+<li>【应用】引用分段数最大值调整为 100 。             </li>
+<li>【应用】开场白最大字符数调整为 4096 。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【应用】解决开场白中无法显示 markdown 样式的表格。             </li>
+<li>【问答页面】解决提问时出现【用户问题】此字段不能为空字符串的问题。             </li>
+<li>【知识库】修复删除最后一个分段时报错的问题。              </li>
+<li>【知识库】上传 md格式文档，一个分段内容超过 4096 个字符时，上传报错。             </li>
+<li>【关于】修复刷新浏览器后不显示版本号的问题。             </li>
+</ul>
+</div>
+<h3 id="v113">v1.1.3<a class="headerlink" href="#v113" title="Permanent link">&para;</a></h3>
+<p>2024 年 05 月 15 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【模型管理】支持对接 Gemini 供应商的模型。           </li>
+<li>【模型管理】支持对接 DeepSeek 供应商的模型。             </li>
+<li>【模型管理】OpenAI 供应商的基础模型增加 gpt-4o 模型。          </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【知识库】文档问题列表的多选框优化增加可点击范围。           </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【知识库】文档删除或迁移分段后，字符数不会重新计算。           </li>
+<li>【知识库】批量导入选中将标题添加关联问题,标题为空时报错 。            </li>
+<li>【模型管理】Ollama 模型中没有已下载的模型时，在 MaxKB 添加 Ollama 模型报错。            </li>
+<li>【模型管理】添加模型时，上次的表单未清空。</li>
+</ul>
+</div>
+<h3 id="v112">v1.1.2<a class="headerlink" href="#v112" title="Permanent link">&para;</a></h3>
+<p>2024 年 05 月 10 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【知识库】上传文档时支持将标题添加为关联问题（适用标题是问题的问答对）。            </li>
+<li>【知识库】支持分段迁移和批量迁移。            </li>
+<li>【知识库】支持分段批量删除。           </li>
+<li>【知识库】文档直接回答时支持相似度设置。            </li>
+<li>【应用】 新增 API Key 跨域的设置。            </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【知识库】上传文档的分段预览优化为懒加载方式，避免数据量大时浏览器崩溃。         </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【知识库】修复文档改名无法点击保存的问题。            </li>
+<li>【知识库】修复导入文档时在特殊情况下导入失败。            </li>
+<li>【用户管理】修复在创建新用户时，用户名含有 0 时校验不通过的问题。            </li>
+<li>【UI】修复ui文件打包报错的问题。         </li>
+</ul>
+</div>
+<h3 id="v111">v1.1.1<a class="headerlink" href="#v111" title="Permanent link">&para;</a></h3>
+<p>2024 年 04 月 30 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【知识库】上传文档的超时时间延长为 1 小时。</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【应用】修复未选择AI 模型时，开启问题优化提问报错的问题。            </li>
+<li>【应用】修复未选择AI 模型时，开启多轮对话报错的问题。         </li>
+<li>【知识库】修复文档上传失败时，点击重试按钮无效的问题。         </li>
+<li>【知识库】修复相同类型的知识库直接文档无法迁移的问题。            </li>
+</ul>
+</div>
+<h3 id="v110">v1.1.0<a class="headerlink" href="#v110" title="Permanent link">&para;</a></h3>
+<p>2024 年 04 月 29 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【知识库】新增全文检索和混合检索两种检索模式。            </li>
+<li>【知识库】新增命中处理方式设置，支持设置文档下的分段命中后可直接返回分段内容，也可让模型优化后返回答案。            </li>
+<li>【知识库】新增文档迁移知识库功能。             </li>
+<li>【知识库】上传word文档、添加/编辑分段内容时支持上传本地图片。              </li>
+<li>【应用】当用户提问题时，若无引用知识库内容，可指定回复内容。             </li>
+<li>【应用】新增用户问答页面显示知识来源设置。             </li>
+<li>【应用】支持自定义应用的 logo，用户端浏览器标签显示自定义 logo和应用名称。                </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【应用】创建/编辑应用时支持不选择模型。              </li>
+<li>【问答页面】 AI 回答时优化流式输出，加快数据展示。            </li>
+<li>【搜索框】搜索框可以支持一键清除搜索条件。             </li>
+<li>【模型管理】添加模型表单优化提示语。            </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【应用】修复对话日志详情不按时间排序的问题。               </li>
+<li>【应用】修复问答页面提问达到最大限制的时候返回内容重复。             </li>
+<li>【应用】修复离线环境提问后由于获取不到 tokens 数导致回答有报错内容的问题。             </li>
+<li>【应用】修复修改应用信息保存时会导致问答页面进入 404 的问题。              </li>
+<li>【模型管理】API Key 字符长度过长时，添加模型报错。            </li>
+<li>【问答页面】问题过长时，AI 回答后会有报错信息。             </li>
+</ul>
+</div>
+<h3 id="v104">v1.0.4<a class="headerlink" href="#v104" title="Permanent link">&para;</a></h3>
+<p>2024 年 04 月 19 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【模型管理】支持对接智谱 AI 开发放平台的通用大模型。            </li>
+<li>【模型管理】支持对接讯飞星火大模型。             </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【登录】当前用户使用默认密码登录后需要先修改密码。            </li>
+<li>【应用】对话日志详情修正答案保存分段时，知识库和文档支持搜索。            </li>
+</ul>
+</div>
+<h3 id="v103">v1.0.3<a class="headerlink" href="#v103" title="Permanent link">&para;</a></h3>
+<p>2024 年 04 月 18 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【知识库】上传文档支持选择文件夹。               </li>
+<li>【模型管理】兼容对接OpenAI 格式的模型。             </li>
+<li>【模型管理】支持对接通义千问的大模型。            </li>
+<li>【模型管理】支持对接Kimi大模型。               </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【问答页面】优化AI 输出答案的效率。         </li>
+<li>【命中测试】优化未命中分段时的提示内容。         </li>
+</ul>
+</div>
+<h3 id="v102">v1.0.2<a class="headerlink" href="#v102" title="Permanent link">&para;</a></h3>
+<p>2024 年 04 月 17 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【知识库】在分段中添加关联问题时，当问题比较长时下拉组件显示不美观。              </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【知识库】修复文本文件中存在空字符（\0）时，上传文档报错。            </li>
+<li>【知识库】在问题中关联分段，当文档为空时搜索分段标题会。           </li>
+<li>【应用】修复问答页面用户提问时，只输入空格提问后回答错位的问题。           </li>
+<li>【应用】问答页面在回答中...时，点击停止回答不生效。             </li>
+</ul>
+</div>
+<h3 id="v101">v1.0.1<a class="headerlink" href="#v101" title="Permanent link">&para;</a></h3>
+<p>2024 年 04 月 15 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【知识库】文档列表、分段标题、分段内容、问题列表查询时大小写不敏感。            </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【知识库】修复整体同步知识库报错。          </li>
+<li>【知识库】修复添加分段时关联问题报错。           </li>
+<li>【知识库】文档列表为空时，在问题列表点击关联分段会404。            </li>
+<li>【应用】修复在应用的命中测试点击分段内容报没有权限访问的问题。             </li>
+</ul>
+</div>
+<h3 id="v100">v1.0.0<a class="headerlink" href="#v100" title="Permanent link">&para;</a></h3>
+<p>2024 年 04 月 11 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【知识库】支持上传 DOCX、PDF 格式的文档。              </li>
+<li>【知识库】新增问题库，支持把用户的问题梳理到问题库，关联文档中的分段，从而能更精确的匹配到相关知识点。              </li>
+<li>【应用】新增用量统计功能，针对每个应用支持统计提问用户数据、新增提问用户数、提问数、 消费Tokens数和用户满意度。              </li>
+<li>【应用】对话日志支持导出。         </li>
+<li>【模型管理】支持对接 OpenAI 模型。            </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【应用】概览中重新生成公开访问链接会导致嵌入第三方脚本失效，增加确认提示。            </li>
+<li>【应用】浮窗模式嵌入第三方的入口 logo 更新。         </li>
+<li>【知识库】文档分段详情页面点击返回时，保留分页信息。         </li>
+<li>【知识库】上传的文档限制调整为 100 MB。         </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【知识库】修复获取在线知识库的更新日志内容为乱码的问题。         </li>
+<li>【知识库】修复创建知识库后，进入设置页面无法修改知识库的问题。         </li>
+<li>【知识库】修复上传不支持格式的文档报错的问题。         </li>
+<li>【应用】修复开启问题优化后，优化后的问题返回为空字符串时未处理的问题。         </li>
+<li>【应用】修复从对话日志详情中添加标注内容报错的问题。         </li>
+<li>【应用】修复浮窗模式的 放大按钮与关闭按钮未对齐。         </li>
+<li>【用户管理】修复创建用户时登录密码使用默认密码MaxKB@123.. 提示规则不对。         </li>
+</ul>
+</div>
+<h3 id="v091">v0.9.1<a class="headerlink" href="#v091" title="Permanent link">&para;</a></h3>
+<p>2024 年 03 月 27 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li>【模型管理】Ollama 供应商添加/修改模型时支持自动下载。          </li>
+<li>【关于】增加显示项目地址、用户手册、论坛求助入口。          </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">功能优化 <img alt="🌻" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f33b.png" title=":sunflower:" /></p>
+<ul>
+<li>【模型管理】】Azure OpenAI 的基础模型支持自定义设置，自定义时需要填写 api-version。         </li>
+<li>【模型管理】】千帆大模型的基础模型支持自定义输入官方标准的大模型（非自行部署）。         </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">问题修复 <img alt="🌴" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f334.png" title=":palm_tree:" /></p>
+<ul>
+<li>【应用】问答提问时同一时间限制只能发出一个快捷问题。            </li>
+<li>【应用】修复问题优化开启后大模型未返回优化结果时的报错问题。              </li>
+<li>【知识库】修复上传的 TXT 文档编码格式问题导致内容为空的问题。            </li>
+<li>【知识库】修复文档列表勾选文档后会自动取消的问题。         </li>
+<li>【用户管理】修复删除用户报错。         </li>
+<li>【用户管理】编辑用户禁止修改用户名。         </li>
+<li>【用户管理】修复禁用用户可以登录。         </li>
+<li>【用户管理】修改用户姓名超过长度时错误提示不对。         </li>
+<li>【用户管理】修复无法修改 admin 用户信息的问题。              </li>
+<li>【用户管理】修复修改用户状态后用户位置变动的问题。         </li>
+</ul>
+</div>
+<h3 id="v090">v0.9.0<a class="headerlink" href="#v090" title="Permanent link">&para;</a></h3>
+<p>2024 年 03 月 20 日</p>
+<div class="admonition abstract">
+<p class="admonition-title">新增功能 <img alt="🌟" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f31f.png" title=":star2:" /></p>
+<ul>
+<li><strong>开箱即用</strong>：支持直接上传文档、自动爬取在线文档，支持文本自动拆分、向量化、RAG（检索增强生成），智能问答交互体验好。          </li>
+<li><strong>无缝嵌入</strong>：支持零编码快速嵌入到第三方业务系统，让已有系统快速拥有智能问答能力，提高用户满意度。             </li>
+<li><strong>多模型支持</strong>：支持Ollama、百度千帆大模型和 Azure OpenAI 的大语言模型。         </li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+    <footer class="md-footer">
+      <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+          <div class="md-footer-copyright">
+            
+              <div class="md-footer-copyright__highlight">
+                Copyright &copy; 2025 <a href="https://matrixorigin.cn/">矩阵起源（深圳）信息科技有限公司</a>, All Rights Reserved. <a href="http://www.beian.miit.gov.cn" target="_blank">粤ICP备2021044820号</a>
+              </div>
+            
+          </div>
+          <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/matrixorigin" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+        </div>
+      </div>
+    </footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "content.tabs.link"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"method": "mike"}}</script>
+    
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+    <script>
+    var elements = document.getElementsByClassName("lightgallery");
+    for(var i=0; i<elements.length; i++) {
+       lightGallery(elements[i]);
+    }
+    </script>
+
+  </body>
+</html>

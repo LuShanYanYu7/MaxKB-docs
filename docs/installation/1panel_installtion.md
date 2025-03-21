@@ -2,49 +2,50 @@
 
 !!! Abstract ""
 
-    关于 1Panel 的安装部署与基础功能介绍，请参考 [1Panel 官方文档](https://1panel.cn/docs/) 。在完成了 1Panel 的安装部署后，根据提示网址打开浏览器进入 1Panel，界面如下。    
+    关于 1Panel 的安装部署与基础功能介绍，请参考 [1Panel 官方文档](https://1panel.cn/docs/) 。在完成了 1Panel 的安装部署后，根据提示网址打开浏览器进入 1Panel，界面如下。
 
 ![1panel](../img/index/1panel.jpg)
 
-## 2 安装 MaxKB 
+## 2 安装 MG
 
-!!! Abstract "" 
-    进入应用商店应用列表，在【AI/大模型】分类下找到 MaxKB 应用进行安装。    
+!!! Abstract ""
 
-![1panel-maxkb](../img/index/1panel_maxkb.jpg)    
+    进入应用商店应用列表，在【AI/大模型】分类下找到 MG 应用进行安装。
 
-!!! Abstract ""  
+![1panel-maxkb](../img/index/1panel_maxkb.jpg)
 
-    在安装页面配置 MaxKB 应用参数：
+!!! Abstract ""
 
-    - 名称：要创建的 MaxKB 应用的名称。   
-    - 版本：选择 MaxKB 的版本。   
-    - 端口：MaxKB 应用的服务端口。   
-    - 容器名称：MaxKB 应用容器名称。    
-    - CPU 限制：MaxKB 应用可以使用的 CPU 核心数。   
-    - 内存限制：MaxKB 应用可以使用的内存大小。    
-    - 端口外部访问：MaxKB 应用可以使用 IP:PORT 进行访问（MaxKB 应用必须勾选外部端口访问）。   
+    在安装页面配置 MG 应用参数：
+
+    - 名称：要创建的 MG 应用的名称。
+    - 版本：选择 MG 的版本。
+    - 端口：MG 应用的服务端口。
+    - 容器名称：MG 应用容器名称。
+    - CPU 限制：MG 应用可以使用的 CPU 核心数。
+    - 内存限制：MG 应用可以使用的内存大小。
+    - 端口外部访问：MG 应用可以使用 IP:PORT 进行访问（MG 应用必须勾选外部端口访问）。
 
 ![maxkb-setting](../img/index/maxkb_setting.jpg)
 
-!!! Abstract "" 
+!!! Abstract ""
 
-    点击确认开始安装，页面自将动跳转到已安装应用列表，等待 MaxKB 应用状态变为已启动。   
+    点击确认开始安装，页面自将动跳转到已安装应用列表，等待 MG 应用状态变为已启动。
 
-![maxkb启动](../img/index/maxkb-start.jpg)    
+![maxkb启动](../img/index/maxkb-start.jpg)
 
-## 3 访问 MaxKB 
+## 3 访问 MG
 
-!!! Abstract "" 
+!!! Abstract ""
 
-    安装成功后，通过浏览器访问如下页面登录 MaxKB：   
+    安装成功后，通过浏览器访问如下页面登录 MG：
 
     ```
-    地址: http://目标服务器IP地址:服务运行端口（默认 8080）     
-    用户名: admin    
-    密码: MaxKB@123..
-    ``` 
+    地址: http://目标服务器IP地址:服务运行端口（默认 8080）
+    用户名: admin
+    密码: MG@123..
+    ```
 
-    为了安全，admin 第一次登录时将要求修改默认密码，修改密码后，重新登录系统即可使用 MaxKB。   
+    为了安全，admin 第一次登录时将要求修改默认密码，修改密码后，重新登录系统即可使用 MG。
 
 ![登录成功](../img/index/UI.jpg)
